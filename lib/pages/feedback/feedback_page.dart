@@ -80,8 +80,6 @@ class _FeedbackPageState extends State<FeedbackPage> {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return Text("Loading");
                       }
-                      print(snapshot.connectionState);
-                      // return Text("success");
 
                       if (!editMode)
                         WidgetsBinding.instance.addPostFrameCallback((_) {
