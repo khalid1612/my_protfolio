@@ -15,84 +15,82 @@ class HomePage extends StatelessWidget {
       height: Get.height - 150,
       padding: const EdgeInsets.symmetric(horizontal: 150.0),
       child: Center(
-        child: Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                flex: 7,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ChatBubble(
-                      clipper: ChatBubbleClipper6(type: BubbleType.sendBubble),
-                      alignment: Alignment.centerLeft,
-                      margin: EdgeInsets.only(top: 20),
-                      backGroundColor: Colors.blue,
-                      child: Text(
-                        "I'm",
-                        style: TextStyle(color: Colors.white),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              flex: 7,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ChatBubble(
+                    clipper: ChatBubbleClipper6(type: BubbleType.sendBubble),
+                    alignment: Alignment.centerLeft,
+                    margin: EdgeInsets.only(top: 20),
+                    backGroundColor: Colors.blue,
+                    child: Text(
+                      "I'm",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  Text(
+                    "Md. Khalid Hassan",
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                        color: Colors.black,
+                        fontSize: 60,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
-                    Text(
-                      "Md. Khalid Hassan",
-                      style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
-                          color: Colors.black,
-                          fontSize: 60,
-                          fontWeight: FontWeight.w700,
-                        ),
+                  ),
+                  Text(
+                    "App Developer",
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                        color: Colors.black,
+                        fontSize: 40,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
-                    Text(
-                      "App Developer",
-                      style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
-                          color: Colors.black,
-                          fontSize: 40,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
+                  ),
 
-                    SizedBox(height: 50),
+                  SizedBox(height: 50),
 
-                    //button
+                  //button
 
-                    Button(
-                      text: "Download CV",
-                      onTap: () {
-                        js.context.callMethod('open', [
-                          'https://drive.google.com/drive/u/2/folders/1EpVd8EslP717PeLPfzVWNi-lrqDw1rKk'
-                        ]);
-                      },
-                    ),
-                  ],
-                ),
+                  Button(
+                    text: "Download CV",
+                    onTap: () {
+                      js.context.callMethod('open', [
+                        'https://drive.google.com/drive/u/2/folders/1EpVd8EslP717PeLPfzVWNi-lrqDw1rKk'
+                      ]);
+                    },
+                  ),
+                ],
               ),
+            ),
 
-              //image
-              Expanded(
-                flex: 3,
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Container(
-                    height: 250,
-                    width: 250,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(Assets.owner),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(125),
+            //image
+            Expanded(
+              flex: 3,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  height: 250,
+                  width: 250,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(Assets.owner),
+                      fit: BoxFit.cover,
                     ),
+                    borderRadius: BorderRadius.circular(125),
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
